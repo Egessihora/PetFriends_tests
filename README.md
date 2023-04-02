@@ -1,4 +1,4 @@
-## QAP_HW_25.5.1_API_PetFriends_tests
+## QAP_HW_25.5.1_PetFriends_tests
 ___
 ### Тестовый проект к модулю №25 SkillFactory курса QAP
 
