@@ -1,18 +1,16 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from autorisation import petfriends_login
 
 
 # проверка удачной авторизации
 def test_petfriends_login(browser):
-    result = petfriends_login(browser)
+    result = browser.find_element(By.CSS_SELECTOR, 'h1').text
     assert result == "PetFriends", "login error"
 
 
 # проверка элементов карточек питомцев (фото, имя, описание)
 def test_petfriends_pets_cards(browser):
-    test_petfriends_login(browser)
     images = browser.find_elements(By.CSS_SELECTOR, '.card-deck .card-img-top')
     names = browser.find_elements(By.CSS_SELECTOR, '.card-deck .card-title')
     descriptions = browser.find_elements(By.CSS_SELECTOR, '.card-deck .card-text')
@@ -28,7 +26,6 @@ def test_petfriends_pets_cards(browser):
 
 # Проверка элементов страницы
 def test_petfriends_card_deck(browser):
-    test_petfriends_login(browser)
     # наличие навигационной панели
     WebDriverWait(browser, 10).until(  # явное ожидание
         EC.presence_of_element_located((By.ID, 'navbarNav')))
