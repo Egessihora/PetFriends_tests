@@ -1,5 +1,5 @@
 
-email = "egessa@yandex.ru"
-password = "egessa1000petfriends"
+email = "Ваш email"
+password = "Ваш password"
 
 base_url = "https://petfriends.skillfactory.ru/"
